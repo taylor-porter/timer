@@ -62,11 +62,20 @@ button:hover, input[type="submit"]:hover, select{
 form{
     display: inline;
 }
-#mute{
-    position:absolute;
-    bottom: 5px;
-    right: 5px;
+#bottom-buttons{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto ;
+    position: absolute;
+    bottom: 0px;
 }
+#mute, #characterChooser{
+    width: fit-content;
+}
+#mute{
+    justify-self: right;
+}
+
 #character{
     z-index: -3;
     opacity: 0;
@@ -80,13 +89,18 @@ form{
     transition: opacity 2s;
     user-select: none;
 }
-#characterChooser{
-    position:absolute;
-    left:5px;
-    bottom:5px;
-}
+
 #characterChooser select{
     color: white;
     border: none;
     outline: none;
+}
+@media (max-width: 500px) {
+    #bottom-buttons{
+        grid-template-columns: 100%;
+        justify-items: center;
+    }
+    #mute{
+        justify-self: center;
+    }
 }
