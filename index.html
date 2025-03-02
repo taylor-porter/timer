@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.png">
+</head>
+<body>
+    <div id="timer">
+        <h1 id="timerDisplay">00:00</h1>
+        <form id="timerInfo">
+            <input type="text" placeholder="00:00:00" maxlength="8" id="startTime">
+            <input type="submit" onsubmit="startTimer()" id="submit" value="Start">
+        </form>
+        <button onclick="reset()" id="pause">Reset</button>
+        <div class="newLine">
+            <button onclick="addTime(30)">+30</button>
+            <button onclick="addTime(60)">+1:00</button>
+        </div>
+    </div>
+
+    <button onclick="mute()" id="mute">Mute Background</button>
+    <img src="images/darth-sidious.jpg" id="character">
+    
+    <form id="characterChooser">
+        <label for="charicters">Choose a character</label>
+        <select name="characters" id="charicters">
+            <option value="darthSidious">Darth Sidious</option>
+            <option value="vector">Vector</option>
+            <option value="gru">Gru</option>
+            <option value="donaldTrump">Donald Trump</option>
+        </select>
+    </form>
+
+        <audio controls hidden loop id="timerAlert">
+            <source src="audio/sidious.mp3" type="audio/mp3">
+
+        </audio>
+
+        <audio controls hidden loop id="lake">
+            <source src="audio/daytime-swamp-ambience.mp3" type="audio/mp3">
+        </audio>
+
+        <audio controls hidden loop id="laugh">
+            <source src="audio/sidious.mp3" type="audio/mp3">
+
+        </audio>
+        <script src="script.js"></script>
+</body>
+</html>
